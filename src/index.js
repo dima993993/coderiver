@@ -1,13 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { createGlobalStyle } from "styled-components";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const GlobalStyle = createGlobalStyle`
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Mulish';
+}
+a {
+  text-decoration: none;
+}
+body {
+  background-color: #E5E5E5;
+}
+`;
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <GlobalStyle />
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 

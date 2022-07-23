@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Grid } from "@mui/material";
+import Aside from "./components/Aside/Aside";
+import Content from "./components/Content/Content";
 
-function App() {
+// import styled from "styled-components";
+
+// const WrapperApp = styled.div`
+//   max-width: 100%;
+//   display: grid;
+//   grid-template
+// `;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid container>
+      <Grid item xs={3}>
+        <Aside />
+      </Grid>
+      <Grid item xs={9}>
+        <Content />
+      </Grid>
+    </Grid>
   );
-}
+};
 
 export default App;
