@@ -1,23 +1,23 @@
 import { Grid } from "@mui/material";
+import { useEffect, useState } from "react";
 import Aside from "./components/Aside/Aside";
 import Content from "./components/Content/Content";
-
-// import styled from "styled-components";
-
-// const WrapperApp = styled.div`
-//   max-width: 100%;
-//   display: grid;
-//   grid-template
-// `;
+import { UsersAPI } from "./data/api";
 
 const App = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    UsersAPI.then((response) => setUsers(response.data));
+  });
+
   return (
     <Grid container>
-      <Grid item xs={3}>
+      <Grid item xs={2}>
         <Aside />
       </Grid>
-      <Grid item xs={9}>
-        <Content />
+      <Grid item xs={10}>
+        <Content users={users} />
       </Grid>
     </Grid>
   );
