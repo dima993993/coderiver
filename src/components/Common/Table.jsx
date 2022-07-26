@@ -14,6 +14,7 @@ import Button from "./Button";
 
 const WrapperTable = styled(TableContainer)`
   margin-top: 40px;
+  border-radius: 10px !important;
   & .filter_users {
     padding: 25px 15px;
     font-weight: 900;
@@ -48,17 +49,17 @@ const TableUsers = (props) => {
   const btnRender = (user) => {
     let geo = user.address.geo.lng;
     if (geo > 60) {
-      return <Button title={"HIGH"} color={"#F12B2C"} />;
+      return <Button title={"HIGH"} color={"#F12B2C"} radius={"20px"} />;
     } else if (geo < 60 && geo > 0) {
-      return <Button title={"LOW"} color={"#FEC400"} />;
+      return <Button title={"LOW"} color={"#FEC400"} radius={"20px"} />;
     } else {
-      return <Button title={"NORMAL"} color={"#29CC97"} />;
+      return <Button title={"NORMAL"} color={"#29CC97"} radius={"20px"} />;
     }
   };
   return (
     <WrapperTable component={Paper}>
       <div className='filter_users'>
-        <div>All Users</div>
+        <h2>All Users</h2>
         <div></div>
       </div>
       <Table aria-label='Usres Table'>
